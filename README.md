@@ -6,29 +6,29 @@ Laravel WebSockets in PHP without Node.JS and Pusher service
 
 - Making a new project dka-develop_laravel-php-websockets.loc:
 	
-	sudo chmod -R 777 /var/www/LARAVEL/VUE/dka-develop_laravel-php-websockets.loc
+	`sudo chmod -R 777 /var/www/LARAVEL/VUE/dka-develop_laravel-php-websockets.loc`
 
 	//!!!! .conf
-	sudo cp /etc/apache2/sites-available/test.loc.conf /etc/apache2/sites-available/dka-develop_laravel-php-websockets.loc.conf
+	`sudo cp /etc/apache2/sites-available/test.loc.conf /etc/apache2/sites-available/dka-develop_laravel-php-websockets.loc.conf`
 			
-	sudo nano /etc/apache2/sites-available/dka-develop_laravel-php-websockets.loc.conf
+	`sudo nano /etc/apache2/sites-available/dka-develop_laravel-php-websockets.loc.conf`
 
-	sudo a2ensite dka-develop_laravel-php-websockets.loc.conf
+	`sudo a2ensite dka-develop_laravel-php-websockets.loc.conf`
 
-	sudo systemctl restart apache2		
+	`sudo systemctl restart apache2`
 
-	sudo nano /etc/hosts
+	`sudo nano /etc/hosts`
 									
-	cd /var/www/LARAVEL/VUE/dka-develop_laravel-php-websockets.loc
+	`cd /var/www/LARAVEL/VUE/dka-develop_laravel-php-websockets.loc`
 
 
 - Deploy project:
 
-	git clone << >>
+	`git clone << >>`
 	
 	_+ Сut the contents of the folder up one level and delete the empty one._
 
-	composer install
+	`composer install`
 
 - Create database, like dka-develop_laravel-php-websockets( `utf8mb4_general_ci` Collation )
 
@@ -51,31 +51,31 @@ PUSHER_APP_SECRET=1234324
 
 - Reset cached settings:
 
-	php artisan config:clear
+	`php artisan config:clear`
 
 - Run migrations:
 
-	php artisan migrate
+	`php artisan migrate`
 
 - Run Seeder: 
 
-	php artisan db:seed
+	`php artisan db:seed`
 			
 - !!!
 
-	npm install
+	`npm install`
 
 - !!!
 
-	npm run dev
+	`npm run dev`
 
 - Start websockets:
 
-	php artisan websockets:serve		
+	`php artisan websockets:serve`
 
 - Start development server:
 
-	php artisan serve		
+	`php artisan serve`
 
 [(11:20)]( https://youtu.be/XkH1qR9TkA8?list=PLD5U-C5KK50WlQNiunPPXSj5jjxVVTPtk&t=680 ) Checking the result:
 
@@ -91,7 +91,7 @@ _!!! We go in each window under different users: !!! OPEN one window -> "Open a 
 
 	http://127.0.0.1:8000/
 
-		`Login:`
+		Login:
 
 			Vano  			
 				vano_tatysho@gmail.com
@@ -102,7 +102,7 @@ _!!! We go in each window under different users: !!! OPEN one window -> "Open a 
 
 	http://127.0.0.1:8000/			
 	
-		`Login:`
+		Login:
 	
 			Vaso
 				vaso_nuasho@gmail.com
@@ -219,10 +219,11 @@ Install two packages, this is `laravel-echo`, do not confuse with the server and
 Do not forget that in laravel, starting from version 5.7, the structure of the folder with resources has changed. `resources/js/bootstrap.js`:
 
 ```html
-	import Echo from 'laravel-echo'
-	window.Pusher = require('pusher-js');
+import Echo from 'laravel-echo'
+    
+window.Pusher = require('pusher-js');
 
-	window.Echo = new Echo({
+window.Echo = new Echo({
     broadcaster: 'pusher',
     key: process.env.MIX_PUSHER_APP_KEY,
     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
